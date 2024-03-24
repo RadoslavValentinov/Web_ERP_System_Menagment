@@ -1,0 +1,53 @@
+﻿@using ERP_System_Menagment.Core.Models
+@model LoginViewModel
+
+<style>
+
+    .text-center{
+        font-family:Arial, Helvetica, sans-serif;
+        font-style:italic;
+    }
+
+    footer{
+        margin-top:100px;
+    }
+
+    .text-center{
+        margin-top:10px;
+    }
+
+    #login-submit{
+        margin-top:20px;
+        padding:7px 70px 7px 70px;
+    }
+
+</style>
+@{
+    ViewData["Title"] = "Log In";
+}
+
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <section>
+            <form id="account" method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="text-center mb-3">
+                    <label asp-for="@Model.Email" class="form-label"></label>
+                    <input asp-for="@Model.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="text-center mb-3">
+                    <label asp-for="@Model.Password" class="form-label"></label>
+                    <input asp-for="@Model.Password" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="text-center">
+                    <button id="login-submit" type="submit" class="btn btn-primary">Log In</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
