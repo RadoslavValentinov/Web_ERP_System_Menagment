@@ -12,6 +12,8 @@ namespace ERP_System_Menagment_Infrastuctor.Data
         {
         }
 
-        public DbSet<Files> DataFiles { get; set; } = null!;
+        public DbSet<Invoice> Invoices { get; set; } = null!;
+
+        public DbSet<Products> AllProducts { get; set; } = null!;
     }
 }

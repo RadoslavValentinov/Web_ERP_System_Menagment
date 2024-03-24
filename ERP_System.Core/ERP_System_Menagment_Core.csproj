@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ModelView\" />
     <Folder Include="IServices\" />
-    <Folder Include="Global_Constant\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
