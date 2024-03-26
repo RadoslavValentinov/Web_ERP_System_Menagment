@@ -15,5 +15,7 @@ namespace ERP_System_Menagment_Infrastuctor.Data
         public DbSet<Invoice> Invoices { get; set; } = null!;
 
         public DbSet<Products> AllProducts { get; set; } = null!;
+
+        public DbSet<ClientsData> Clients { get; set; } = null!;
     }
 }
