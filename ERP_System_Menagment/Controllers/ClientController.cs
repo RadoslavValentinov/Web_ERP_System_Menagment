@@ -1,19 +1,19 @@
-﻿using ERP_System_Menagment_Core.ModelView.ProductVievModel;
+﻿using ERP_System_Menagment_Core.ModelView.ClientsModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
     [Authorize]
-    public class ProductController : Controller
+    public class ClientController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
-        public IActionResult AllProducts()
+
+        public IActionResult AllClients() 
         {
             return View();
         }
@@ -21,13 +21,13 @@ namespace ERP_System_Menagment.Controllers
 
 
         [HttpGet]
-        public IActionResult CreateProducts() 
+        public IActionResult CreateClient()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult CreateProducts(ProductViewModel model) 
+        public IActionResult CreateClient(ClientViewModel model)
         {
             return View(model);
         }
@@ -35,23 +35,22 @@ namespace ERP_System_Menagment.Controllers
 
 
         [HttpGet]
-        public IActionResult EditProducts()
+        public IActionResult EditClient()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult EditProducts(EditProductViewModel model)
+        public IActionResult EditClient(EditClientsViewModel  model) 
         {
             return View(model);
         }
 
 
 
-        public IActionResult DeleteProducts()
+        public IActionResult DeleteClient()
         {
             return View();
         }
-
     }
 }
