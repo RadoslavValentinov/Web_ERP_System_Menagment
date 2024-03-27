@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
-    [Authorize]
+   
     public class ClientController : Controller
     {
         public IActionResult Index()
@@ -35,7 +35,7 @@ namespace ERP_System_Menagment.Controllers
 
 
         [HttpGet]
-        public IActionResult EditClient()
+        public IActionResult EditClient(int id)
         {
             return View();
         }

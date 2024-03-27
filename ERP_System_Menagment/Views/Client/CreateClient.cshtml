@@ -1,0 +1,36 @@
+﻿@using ERP_System_Menagment_Core.ModelView.ClientsModels
+@model ClientViewModel
+
+<form asp-area="" asp-controller="Client" asp-action="CreateClient" method="post">
+    <hr />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="text-center mb-3">
+        <label asp-for="@Model.FirmName" class="form-label"></label>
+        <input asp-for="@Model.FirmName" class="form-control" autocomplete="username" aria-required="true" />
+        <span asp-validation-for="FirmName" class="text-danger"></span>
+    </div>
+    <div class="text-center mb-3">
+        <label asp-for="@Model.RegistrNumber" class="form-label"></label>
+        <input asp-for="@Model.RegistrNumber" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+        <span asp-validation-for="RegistrNumber" class="text-danger"></span>
+    </div>
+    <div class="text-center mb-3">
+        <label asp-for="@Model.Address" class="form-label"></label>
+        <input asp-for="@Model.Address" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="text-center mb-3">
+        <label asp-for="@Model.PhoneNumber" class="form-label"></label>
+        <input asp-for="@Model.PhoneNumber" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="text-center mb-3">
+        <label asp-for="@Model.AccountablePerson" class="form-label"></label>
+        <input asp-for="@Model.AccountablePerson" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+        <span asp-validation-for="AccountablePerson" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+        <button id="login-submit" type="submit" class="btn btn-primary">Save Client</button>
+    </div>
+</form>

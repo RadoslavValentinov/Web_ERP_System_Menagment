@@ -1,0 +1,30 @@
+﻿@using ERP_System_Menagment_Core.ModelView.ClientsModels
+@model IEnumerable<ClientViewModel>
+
+
+<link rel="stylesheet" href="~/css/ClientsStyle/Clients.css" asp-append-version="true" />
+
+
+@foreach (var item in Model)
+{
+
+    <table>
+        <tr>
+            <th>Client Name</th>
+            <th>Register Number</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Accountable Person</th>
+        </tr>
+
+        <tr>
+            <td>@item.FirmName</td>
+            <td>@item.RegistrNumber</td>
+            <td>@item.Address</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.AccountablePerson</td>
+        </tr>
+
+    </table>
+}
+

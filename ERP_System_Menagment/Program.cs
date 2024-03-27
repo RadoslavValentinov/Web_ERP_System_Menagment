@@ -11,14 +11,14 @@ namespace ERP_System_Menagment
         {
             var builder = WebApplication.CreateBuilder(args);
 
-           
+
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ERPSystemDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.ConfigureApplicationCookie(option => {
-
+            builder.Services.ConfigureApplicationCookie(option =>
+            {
                 option.Cookie.SameSite = SameSiteMode.Strict;
                 option.LoginPath = "/User/Login";
                 option.LogoutPath = "/User/Login";
@@ -39,7 +39,7 @@ namespace ERP_System_Menagment
 
             var app = builder.Build();
 
-           
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
