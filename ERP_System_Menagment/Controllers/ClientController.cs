@@ -1,10 +1,9 @@
 ﻿using ERP_System_Menagment_Core.ModelView.ClientsModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
-   
+
     public class ClientController : Controller
     {
         public IActionResult Index()

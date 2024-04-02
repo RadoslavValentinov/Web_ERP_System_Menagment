@@ -1,0 +1,28 @@
+﻿@using ERP_System_Menagment_Core.ModelView.ProductVievModel
+@model ProductViewModel
+
+
+@using (Html.BeginForm("CreateProducts", "Product", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div id="formCreate">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" aria-required="true" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price</label>
+            <textarea asp-for="Price" class="form-control" aria-required="true" rows="6" cols="30"></textarea>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label">Quantity</label>
+            <input asp-for="Quantity" class="form-control" aria-required="true" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary"> Create Product</button>
+    </div>
+}
