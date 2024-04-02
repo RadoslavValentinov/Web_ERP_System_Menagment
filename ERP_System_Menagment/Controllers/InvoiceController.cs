@@ -7,6 +7,8 @@ namespace ERP_System_Menagment.Controllers
     [Authorize]
     public class InvoiceController : Controller
     {
+
+        // start end date search invoice and result end of page may be ayax query 
         public IActionResult Index()
         {
             return View();
