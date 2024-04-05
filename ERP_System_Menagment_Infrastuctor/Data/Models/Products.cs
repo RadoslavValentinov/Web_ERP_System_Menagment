@@ -17,7 +17,11 @@ namespace ERP_System_Menagment_Infrastuctor.Data.Models
         public string Name { get; set; } = null!;
 
         [Required]
-        public decimal Price { get; set; }
+        public decimal SalePrice { get; set; }
+
+
+        [Required]
+        public decimal GoodPrice { get; set; }
 
         [Required]
         public int Quantity { get; set; }

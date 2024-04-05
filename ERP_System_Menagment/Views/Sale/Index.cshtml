@@ -1,0 +1,28 @@
+﻿@using ERP_System_Menagment_Core.ModelView.SaleModels
+@model CreateSaleViewModel
+
+<div class="sale">
+    <div id="amount">
+        <h3>
+            Method of payment
+        </h3>
+        <button id="payment">Cash</button>
+        <button id="pos">Pos</button>
+
+        <h3>Sum:0.00</h3>
+    </div>
+
+    <div class="prod">
+
+        <table>
+            <tr>
+                <td> <input type="text"  /> </td>
+                <td> <input type="number"/> </td>
+                <td> <input type="number"/> </td>
+                <td> <input type="number" onclick="newLine()"/> </td>
+            </tr>
+           
+        </table>
+
+    </div>
+</div>
