@@ -11,7 +11,7 @@ namespace ERP_System_Menagment_Infrastuctor.Data.Models
         public DateTime UploadTime { get; set; }
 
         [Required]
-        public List<string> RecipientCompany { get; set; } = new List<string>();
+        public string? RecipientCompany { get; set; }
 
         public List<Products> ProductstoSell { get; set; } = new List<Products>();
 

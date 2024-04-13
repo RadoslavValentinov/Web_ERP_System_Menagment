@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
-    [Authorize]
+  
     public class SaleController : Controller
     {
         public IActionResult Index()
