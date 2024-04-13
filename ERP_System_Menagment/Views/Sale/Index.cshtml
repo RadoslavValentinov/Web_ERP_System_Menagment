@@ -1,27 +1,66 @@
 ﻿@using ERP_System_Menagment_Core.ModelView.SaleModels
 @model CreateSaleViewModel
 
+
+<style>
+
+    body {
+        background: rgb(4,4,246);
+        background: linear-gradient(360deg, rgba(4,4,246,0.24086131034445024) 0%, rgba(4,214,249,0.9327380610447304) 10%);
+    }
+ 
+
+    #amount {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        #amount .sum {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            position:relative;
+            top:70px;
+        }
+
+    .option button {
+        padding: 20px 30px;
+        display: inline;
+    }
+
+        .option button i {
+            margin: 10px;
+            padding-bottom:5px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+</style>
+
+
 <div class="sale">
     <div id="amount">
-        <h3>
-            Method of payment
-        </h3>
-        <button id="payment">Cash</button>
-        <button id="pos">Pos</button>
+        <div class="option">
+            <h3>
+                Method of payment
+            </h3>
+            <button id="payment"><i class="fa-solid fa-sack-dollar fa-2xl"></i>Cash</button>
+            <button id="pos"><i class="fa-regular fa-credit-card fa-2xl"></i>Pos</button>
+        </div>
 
-        <h3>Sum:0.00</h3>
+
+        <h3 class="sum">Sum:0.00</h3>
     </div>
+    <hr />
 
     <div class="prod">
-
         <table>
             <tr>
-                <td> <input type="text"  /> </td>
-                <td> <input type="number"/> </td>
-                <td> <input type="number"/> </td>
-                <td> <input type="number" onclick="newLine()"/> </td>
+                <td> <input type="text" /> </td>
+                <td> <input type="number" /> </td>
+                <td> <input type="number" /> </td>
+                <td> <input type="number" onclick="newLine()" /> </td>
             </tr>
-           
+
         </table>
 
     </div>
