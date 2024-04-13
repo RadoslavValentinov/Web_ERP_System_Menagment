@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /ERP_System_Menagment/appsettings.json
+/ERP_System_Menagment/Data/Migrations/ApplicationDbContextModelSnapshot.cs
+/ERP_System_Menagment/Data/Migrations/ApplicationDbContextModelSnapshot.cs
+/ERP_System_Menagment/Data/Migrations/ApplicationDbContextModelSnapshot.cs
