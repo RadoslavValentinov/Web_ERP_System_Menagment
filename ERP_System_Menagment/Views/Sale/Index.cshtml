@@ -1,6 +1,8 @@
 ﻿@using ERP_System_Menagment_Core.ModelView.SaleModels
 @model CreateSaleViewModel
 
+<script src="/js/SaleFunction/NewLine.js"></script>
+
 
 <style>
 
@@ -9,6 +11,7 @@
         background: linear-gradient(360deg, rgba(4,4,246,0.24086131034445024) 0%, rgba(4,214,249,0.9327380610447304) 10%);
     }
 
+
     #amount {
         display: flex;
         justify-content: space-between;
@@ -16,19 +19,58 @@
 
         #amount .sum {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 38px;
+            font-size: 50px;
+            position: relative;
+            top: 70px;
         }
 
     .option button {
-        padding: 20px 35px;
+        padding: 20px 30px;
         display: inline;
+        border-radius: 6px;
+        margin: 5px;
     }
 
         .option button i {
             margin: 10px;
+            padding-bottom: 5px;
             display: block;
             margin-bottom: 10px;
         }
+
+    .fa-sack-dollar {
+        color: forestgreen;
+    }
+
+    .fa-credit-card {
+        color: deepskyblue;
+    }
+
+
+    input {
+        width: 322px;
+    }
+
+    .container {
+        margin-left: 210px;
+    }
+
+    aside {
+        position: absolute;
+        left: 0px;
+        width: 210px;
+        top: 70px;
+        border-right: 2px solid gray;
+    }
+
+        aside ul {
+            padding-left: 0px;
+            width: 200px;
+        }
+
+            aside ul li {
+                list-style: none;
+            }
 
 </style>
 
@@ -47,17 +89,54 @@
         <h3 class="sum">Sum:0.00</h3>
     </div>
     <hr />
+    <aside>
 
+        <button asp-area="" asp-controller="Client" asp-action="AllClients" onclick="SetClient()">Choice Client to Invoice</button>
+
+        <div hidden>
+            <p>Firm Name:</p>
+            <p>Register Number:</p>
+            <p>Address</p>
+            <p>PhoneNumber:</p>
+            <p>AccountablePerson:</p>
+        </div>
+
+        <ul>
+            <li><a asp-area="" asp-controller="Invoice" asp-action="CreateInvoice">Create Invoice</a></li>
+            <li><a href="#">Bank payment</a></li>
+            <li><a asp-area="" asp-controller="Product" asp-action="AllProducts">Stock report</a></li>
+        </ul>
+
+        <hr />
+        <h4>Your Invoice data</h4>
+        <ul>
+            <li>Gladierte EOOD</li>
+            <li>Bulstat: 2021165887954441</li>
+            <li>Mol.- Sergio Tores</li>
+            <li>Town: Pleven</li>
+            <li>Address: st.North Valden 39</li>
+        </ul>
+        <hr />
+        <h5>Sum of Product in warehouse: 12598.28lv.</h5>
+        <hr />
+        <h5>Daily turnover: 1200.26lv</h5>
+    </aside>
     <div class="prod">
-        <table>
-            <tr>
-                <td> <input type="text" /> </td>
-                <td> <input type="number" /> </td>
-                <td> <input type="number" /> </td>
-                <td> <input type="number" onclick="newLine()" /> </td>
-            </tr>
-
+        <table id="AllInfo">
+                <tr>
+                    <td> <input type="text" autofocus /> </td>
+                    <td> <input type="text" /> </td>
+                    <td> <input type="text" /> </td>
+                    <td> <input type="text" onkeypress="newLine()" /> </td>
+                </tr>
         </table>
 
     </div>
 </div>
+@* <script>
+    $(document).keyup(function newSet(e) {
+        if ($(".input1").is(":focus") && (e.keyCode == 13)) {
+            onclick = "newLine()";
+        }
+    })
+</script> *@
