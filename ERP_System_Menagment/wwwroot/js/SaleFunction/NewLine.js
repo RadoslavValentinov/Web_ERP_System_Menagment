@@ -1,14 +1,24 @@
 ﻿function newLine() {
 
     let getTable = document.getElementById("AllInfo");
+    let ch = getTable.children;
+
 
     let tr = document.createElement('tr');
 
     let tdFirst = document.createElement('td');
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
-    inputFirst.setAttribute('autofocus', '')
+    inputFirst.addEventListener('focus', seeBtn);
+
+    let btn = document.createElement('button');
+    btn.textContent = '...';
+    btn.setAttribute('id', 'getAll');
+    btn.setAttribute('hidden', true);
+    btn.addEventListener('click', AllProd);
+
     tdFirst.appendChild(inputFirst);
+    tdFirst.appendChild(btn);
 
     let tdSecond = document.createElement('td');
     let inputSecond = document.createElement('input');
