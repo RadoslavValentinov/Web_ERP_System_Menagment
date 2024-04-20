@@ -1,7 +1,12 @@
 ﻿@using ERP_System_Menagment_Core.ModelView.SaleModels
 @model CreateSaleViewModel
 
+
 <script src="/js/SaleFunction/NewLine.js"></script>
+<script src="/js/SaleFunction/CreateBtn.js"></script>
+<script src="/js/SaleFunction/AllProduct.js"></script>
+
+
 
 
 <style>
@@ -46,6 +51,9 @@
         color: deepskyblue;
     }
 
+    #first {
+        width: 300px;
+    }
 
     input {
         width: 322px;
@@ -71,6 +79,14 @@
             aside ul li {
                 list-style: none;
             }
+
+    #getAll {
+        padding: 3px 15px;
+        border-radius: 6px;
+        position: absolute;
+        top: 250px;
+        left: 500px;
+    }
 
 </style>
 
@@ -123,12 +139,13 @@
     </aside>
     <div class="prod">
         <table id="AllInfo">
-                <tr>
-                    <td> <input type="text" autofocus /> </td>
-                    <td> <input type="text" /> </td>
-                    <td> <input type="text" /> </td>
-                    <td> <input type="text" onkeypress="newLine()" /> </td>
-                </tr>
+            <tr>
+                <td> <input id="first" type="text" onfocus="seeBtn()" /> </td>
+                <button hidden id="getAll" onclick="AllProd()">...</button>
+                <td> <input type="text" /> </td>
+                <td> <input type="text" /> </td>
+                <td> <input type="text" onkeypress="newLine()" /> </td>
+            </tr>
         </table>
 
     </div>
