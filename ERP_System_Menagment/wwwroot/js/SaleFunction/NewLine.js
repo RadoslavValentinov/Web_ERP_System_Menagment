@@ -1,11 +1,8 @@
 ﻿function newLine() {
 
     let getTable = document.getElementById("AllInfo");
-<<<<<<< HEAD
-    let getInput = document.getElementById("first");
-    let ch = getTable.children;
-=======
->>>>>>> ec55b1c22bee350e21e6a8958929dc6f0dcd5fe7
+    let getBtnremove = document.getElementById("element");
+ 
     let ch = getTable.children;
 
 
@@ -14,33 +11,20 @@
     let tdFirst = document.createElement('td');
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
-<<<<<<< HEAD
     inputFirst.setAttribute('id', 'first');
-    inputFirst.addEventListener('focus', seeBtn);
+   
 
     let btn = document.createElement('button');
     btn.textContent = '...';
     btn.setAttribute('id', 'getAll');
     btn.style.visibility = 'hidden';
-    btn.addEventListener('click', AllProd);
-
-=======
->>>>>>> ec55b1c22bee350e21e6a8958929dc6f0dcd5fe7
+  
     inputFirst.addEventListener('focus', seeBtn);
-
-    let btn = document.createElement('button');
-    btn.textContent = '...';
-    btn.setAttribute('id', 'getAll');
-    btn.setAttribute('hidden', true);
     btn.addEventListener('click', AllProd);
 
     tdFirst.appendChild(inputFirst);
     tdFirst.appendChild(btn);
-<<<<<<< HEAD
-    tdFirst.appendChild(btn);
 
-=======
->>>>>>> ec55b1c22bee350e21e6a8958929dc6f0dcd5fe7
 
     let tdSecond = document.createElement('td');
     let inputSecond = document.createElement('input');
@@ -66,5 +50,6 @@
     tr.appendChild(tdFour);
 
 
-    getTable.appendChild(tr);
+
+    ch[0].appendChild(tr);
 }

@@ -1,8 +1,9 @@
-﻿function seeBtn() {
+﻿function removeBtn() {
 
     let getBtn = document.getElementById("getAll");
 
     // getBtn.style.visibility = 'visible';
 
-    getBtn.removeAttribute('hidden');
+    getBtn.setAttribute('hidden');
+
 }
