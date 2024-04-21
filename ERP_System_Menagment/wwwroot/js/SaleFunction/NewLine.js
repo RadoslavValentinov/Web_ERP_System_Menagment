@@ -1,6 +1,8 @@
 ﻿function newLine() {
 
     let getTable = document.getElementById("AllInfo");
+    let getBtnremove = document.getElementById("element");
+ 
     let ch = getTable.children;
 
 
@@ -9,16 +11,20 @@
     let tdFirst = document.createElement('td');
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
-    inputFirst.addEventListener('focus', seeBtn);
+    inputFirst.setAttribute('id', 'first');
+   
 
     let btn = document.createElement('button');
     btn.textContent = '...';
     btn.setAttribute('id', 'getAll');
-    btn.setAttribute('hidden', true);
+    btn.style.visibility = 'hidden';
+  
+    inputFirst.addEventListener('focus', seeBtn);
     btn.addEventListener('click', AllProd);
 
     tdFirst.appendChild(inputFirst);
     tdFirst.appendChild(btn);
+
 
     let tdSecond = document.createElement('td');
     let inputSecond = document.createElement('input');
@@ -29,12 +35,12 @@
     let inputThree = document.createElement('input');
     inputThree.type = 'text';
     tdThree.appendChild(inputThree);
-   
+
 
     let tdFour = document.createElement('td');
     let inputFour = document.createElement('input');
     inputFour.type = 'text';
-    inputFour.addEventListener('keypress',newLine)
+    inputFour.addEventListener('keypress', newLine);
     tdFour.appendChild(inputFour);
 
 
@@ -44,5 +50,6 @@
     tr.appendChild(tdFour);
 
 
-    getTable.appendChild(tr);
+
+    ch[0].appendChild(tr);
 }
