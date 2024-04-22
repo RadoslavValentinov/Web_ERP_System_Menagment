@@ -4,6 +4,9 @@
     let getBtnremove = document.getElementById("element");
  
     let ch = getTable.children;
+    //let remo = getBtnremove.children;
+    //remo[1].style.visibility = 'hidden';
+    
 
 
     let tr = document.createElement('tr');
@@ -12,18 +15,9 @@
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
     inputFirst.setAttribute('id', 'first');
-   
-
-    let btn = document.createElement('button');
-    btn.textContent = '...';
-    btn.setAttribute('id', 'getAll');
-    btn.style.visibility = 'hidden';
   
     inputFirst.addEventListener('focus', seeBtn);
-    btn.addEventListener('click', AllProd);
-
     tdFirst.appendChild(inputFirst);
-    tdFirst.appendChild(btn);
 
 
     let tdSecond = document.createElement('td');
