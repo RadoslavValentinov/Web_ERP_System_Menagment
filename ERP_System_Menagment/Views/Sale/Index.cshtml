@@ -1,4 +1,8 @@
-﻿@using ERP_System_Menagment_Core.ModelView.SaleModels
+﻿@using ERP_System_Menagment_Core.IServices
+@using ERP_System_Menagment_Core.ModelView.SaleModels
+@using ERP_System_Menagment_Core.Services
+@using ERP_System_Menagment_Infrastuctor.Data.Models
+@inject ProductService service
 @model CreateSaleViewModel
 
 
@@ -61,7 +65,9 @@
     .container {
         margin-left: 210px;
     }
-
+    .prod{
+        margin-top:50px;
+    }
     aside {
         position: absolute;
         left: 0px;
@@ -78,15 +84,34 @@
             aside ul li {
                 list-style: none;
             }
-   
+
     #getAll {
         padding: 3px 15px;
         border-radius: 6px;
-        
+        position: absolute;
+        top:240px;
     }
+
     #element {
-        display:flex;
-        flex-wrap:nowrap;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+
+    #result{
+        border-radius:4px;
+        overflow:hidden;
+    }
+    #result td{
+       border:1px solid black;
+       padding:5px 90px;
+       text-align:start;
+    }
+    #result button{
+        padding: 8px;
+        background-color:red;
+        color:white;
+        border:1px solid white;
     }
 
 </style>
@@ -102,7 +127,7 @@
             <button id="pos"><i class="fa-regular fa-credit-card fa-2xl"></i>Pos</button>
         </div>
 
-
+        
         <h3 class="sum">Sum:0.00</h3>
     </div>
     <hr />
@@ -140,11 +165,13 @@
     </aside>
     <div class="prod">
         <table id="AllInfo">
-
+            <button id="getAll" onclick="AllProd()" hidden>...</button>
             <tr>
-                <td id="element"> <input id="first" type="text" onfocus="seeBtn()"/> <button id="getAll" onclick="AllProd()" hidden>...</button></td>
+                <td>
+                    <input id="first" type="text" onfocus="seeBtn()" />
+                </td>
                 <td> <input type="text" /> </td>
-                <td> <input type="text" /> </td> 
+                <td> <input type="text" /> </td>
                 <td> <input type="text" onkeypress="newLine()" /> </td>
             </tr>
 

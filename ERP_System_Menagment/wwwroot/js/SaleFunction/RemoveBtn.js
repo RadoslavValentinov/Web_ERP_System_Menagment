@@ -1,9 +1,7 @@
 ﻿function removeBtn() {
 
-    let getBtn = document.getElementById("getAll");
+    let getDivHide = document.getElementById('result');
 
-    // getBtn.style.visibility = 'visible';
-
-    getBtn.setAttribute('hidden');
+    getDivHide.style.visibility = 'hidden';
 
 }
