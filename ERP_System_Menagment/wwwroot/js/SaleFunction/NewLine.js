@@ -1,12 +1,18 @@
-﻿function newLine() {
+﻿//test get respons to all products
+
+let respons = fetch("https://localhost:7278/Product/AllProducts.json")
+    .then(data => data.json())
+
+console.log(respons.);
+
+
+function newLine() {
 
     let getTable = document.getElementById("AllInfo");
-    let getBtnremove = document.getElementById("element");
  
     let ch = getTable.children;
-    //let remo = getBtnremove.children;
-    //remo[1].style.visibility = 'hidden';
-    
+
+
 
 
     let tr = document.createElement('tr');

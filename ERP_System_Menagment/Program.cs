@@ -1,3 +1,6 @@
+using ERP_System_Menagment.Infrastructure.Data.Common;
+using ERP_System_Menagment_Core.IServices;
+using ERP_System_Menagment_Core.Services;
 using ERP_System_Menagment_Infrastuctor.Data;
 using ERP_System_Menagment_Infrastuctor.Data.Models;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +19,9 @@ namespace ERP_System_Menagment
             builder.Services.AddDbContext<ERPSystemDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+            builder.Services.AddScoped<IRepository,Repository>();
+            builder.Services.AddScoped<IProductService,ProductService>();
 
             builder.Services.ConfigureApplicationCookie(option =>
             {
