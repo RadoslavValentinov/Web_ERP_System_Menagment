@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ProductController : Controller
     {
         private readonly IProductService service;

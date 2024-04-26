@@ -1,0 +1,36 @@
+﻿@using ERP_System_Menagment_Core.ModelView.ProductVievModel
+@model IEnumerable<ProductViewModel>
+
+
+
+
+<table>
+
+    <thead>
+        <tr>
+            <td></td>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>SalePrice</td>
+            <td>GoodPrice</td>
+        </tr>
+
+        @{
+            var count = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@count</td>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.SalePrice</td>
+                <td>@item.GoodPrice</td>
+            </tr>
+
+            count++;
+        }
+
+    </thead>
+
+</table>
