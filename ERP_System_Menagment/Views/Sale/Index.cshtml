@@ -2,7 +2,6 @@
 @using ERP_System_Menagment_Core.ModelView.SaleModels
 @using ERP_System_Menagment_Core.Services
 @using ERP_System_Menagment_Infrastuctor.Data.Models
-@* @inject ProductService service *@
 @model CreateSaleViewModel
 
 
@@ -10,6 +9,7 @@
 <script src="/js/SaleFunction/CreateBtn.js"></script>
 <script src="/js/SaleFunction/AllProduct.js"></script>
 <script src="/js/SaleFunction/RemoveBtn.js"></script>
+<script src="/js/SaleFunction/AutoCompleteInput.js"></script>
 
 
 <style>
@@ -168,7 +168,8 @@
             <button id="getAll" onclick="AllProd()" hidden>...</button>
             <tr>
                 <td>
-                    <input id="first" type="text" onfocus="seeBtn()" />
+                    @*What event set to use func *@
+                    <input id="first" type="text" onkeypress="autocomplete(this.value)" />
                 </td>
                 <td> <input type="text" /> </td>
                 <td> <input type="text" /> </td>

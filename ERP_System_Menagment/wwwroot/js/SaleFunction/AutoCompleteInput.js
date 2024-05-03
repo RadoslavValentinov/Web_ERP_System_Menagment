@@ -1,9 +1,23 @@
 ﻿
+let arr = [];
+
+arr = function () {
+
+    var url = "/Product/AllProduct";
+    $.get(url, null, function (data) {
+        $("#rData").data(data)
+        return data
+    })
+
+}
 
 
 
 
 function autocomplete(inp, arr) {
+
+
+
 
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values or fetch data json:*/
