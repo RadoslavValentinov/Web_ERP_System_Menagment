@@ -1,7 +1,10 @@
 ﻿using ERP_System_Menagment_Core.IServices;
 using ERP_System_Menagment_Core.ModelView.ProductVievModel;
-using Microsoft.AspNetCore.Authorization;
+using ERP_System_Menagment_Infrastuctor.Data.Models;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
+using System;
 
 namespace ERP_System_Menagment.Controllers
 {
@@ -28,16 +31,26 @@ namespace ERP_System_Menagment.Controllers
             return View(result);
         }
 
+        //method get to data format in Json
+        [HttpGet]
+        public  string AllProduct()
+        {
+            var convert = service.AllProducts();
+
+            return JsonSerializer.Serialize(convert);
+        }
+
+
 
 
         [HttpGet]
-        public IActionResult CreateProducts() 
+        public IActionResult CreateProducts()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult CreateProducts(ProductViewModel model) 
+        public IActionResult CreateProducts(ProductViewModel model)
         {
             return View(model);
         }
