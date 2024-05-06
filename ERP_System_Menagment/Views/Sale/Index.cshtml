@@ -5,11 +5,21 @@
 @model CreateSaleViewModel
 
 
+
+
 <script src="/js/SaleFunction/NewLine.js"></script>
 <script src="/js/SaleFunction/CreateBtn.js"></script>
 <script src="/js/SaleFunction/AllProduct.js"></script>
 <script src="/js/SaleFunction/RemoveBtn.js"></script>
 <script src="/js/SaleFunction/AutoCompleteInput.js"></script>
+<script src="/js/SaleFunction/JavaScript.js"></script>
+
+<script src="/js/SaleFunction/JavaScript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+
+
+
+
 
 
 <style>
@@ -65,9 +75,11 @@
     .container {
         margin-left: 210px;
     }
-    .prod{
-        margin-top:50px;
+
+    .prod {
+        margin-top: 50px;
     }
+
     aside {
         position: absolute;
         left: 0px;
@@ -89,7 +101,7 @@
         padding: 3px 15px;
         border-radius: 6px;
         position: absolute;
-        top:240px;
+        top: 240px;
     }
 
     #element {
@@ -98,21 +110,27 @@
     }
 
 
-    #result{
-        border-radius:4px;
-        overflow:hidden;
+    #result {
+        border-radius: 4px;
+        overflow: hidden;
     }
-    #result td{
-       border:1px solid black;
-       padding:5px 90px;
-       text-align:start;
-    }
-    #result button{
-        padding: 8px;
-        background-color:red;
-        color:white;
-        border:1px solid white;
-    }
+
+        #result td {
+            border: 1px solid black;
+            padding: 5px 90px;
+            text-align: start;
+        }
+
+        #result button {
+            padding: 8px;
+            background-color: red;
+            color: white;
+            border: 1px solid white;
+        }
+
+
+
+   
 
 </style>
 
@@ -127,7 +145,7 @@
             <button id="pos"><i class="fa-regular fa-credit-card fa-2xl"></i>Pos</button>
         </div>
 
-        
+
         <h3 class="sum">Sum:0.00</h3>
     </div>
     <hr />
@@ -164,12 +182,12 @@
         <h5>Daily turnover: 1200.26lv</h5>
     </aside>
     <div class="prod">
+        <button id="getAll" onclick="AllProd()" hidden>...</button>
         <table id="AllInfo">
-            <button id="getAll" onclick="AllProd()" hidden>...</button>
+
             <tr>
                 <td>
-                    @*What event set to use func *@
-                    <input id="first" type="text" onkeypress="autocomplete(this.value)" />
+                    <input id="first" type="text" />
                 </td>
                 <td> <input type="text" /> </td>
                 <td> <input type="text" /> </td>
@@ -180,10 +198,22 @@
 
     </div>
 </div>
-@* <script>
-    $(document).keyup(function newSet(e) {
-        if ($(".input1").is(":focus") && (e.keyCode == 13)) {
-            onclick = "newLine()";
-        }
-    })
+@* <script type="text/javascript">
+    $(document).ready(function () {
+        $("#first").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url:"/Product/AllProduct",
+                    type: "POST",
+                    dataType: "json",
+                    data: { prefix: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return console.log(item);
+                        }))
+                    }
+                })
+            },
+        });
+    });
 </script> *@
