@@ -1,0 +1,38 @@
+﻿
+.navbar {
+    background: rgb(228,221,224);
+    background: radial-gradient(circle, rgba(228,221,224,1) 87%, rgba(185,192,200,0.207247864966299) 97%);
+}
+
+.navbar-nav .nav-item {
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar-brand{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:24PX; 
+}
+
+.nav-link i {
+    padding-right:5px;
+}
+
+.nav-link .fa-file-lines{
+    color:gray;
+}
+
+.nav-link .fa-square-plus{
+    color:green;
+}
+
+.nav-link .fa-product-hunt {
+    color: blue;
+}
+
+.nav-link .fa-list-ul {
+    color: gray;
+}
+
+.nav-link .fa-salesforce {
+    color: deepskyblue;
+}

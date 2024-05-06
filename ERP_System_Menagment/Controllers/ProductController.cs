@@ -5,6 +5,11 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
 using System;
+using System.Web.Mvc;
+using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
+using HttpGetAttribute = System.Web.Mvc.HttpGetAttribute;
+using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
 
 namespace ERP_System_Menagment.Controllers
 {
@@ -32,12 +37,12 @@ namespace ERP_System_Menagment.Controllers
         }
 
         //method get to data format in Json
-        [HttpGet]
-        public  string AllProduct()
+       
+        public  JsonResult AllProduct()
         {
             var convert = service.AllProducts();
 
-            return JsonSerializer.Serialize(convert);
+            return Json(convert, JsonRequestBehavior.AllowGet);
         }
 
 
