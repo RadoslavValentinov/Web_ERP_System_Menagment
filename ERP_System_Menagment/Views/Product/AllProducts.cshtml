@@ -2,25 +2,70 @@
 @model IEnumerable<ProductViewModel>
 
 
+<style>
+
+    body {
+        background: rgb(66,177,227);
+        background: linear-gradient(360deg, rgba(66,177,227,0.8346988453584558) 29%, rgba(13,98,171,0.207247864966299) 92%);
+    }
+
+    table {
+        position: relative;
+        left: 180px;
+    }
+
+    tr, td {
+        border: 2px solid gray;
+        padding: 20px 50px;
+    }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+            color: whitesmoke;
+        }
+
+    thead tr{
+        background-color: lightgray;
+        color: black;
+    }
+
+
+    .btn {
+        position: absolute;
+        left: 50px;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 6px;
+        background-color: lawngreen;
+        color: ghostwhite;
+    }
+
+</style>
+
+<a class="btn" type="submit" asp-area="" asp-controller="Product" asp-action="CreateProducts">+ Add Product</a>
+
 
 
 <table>
 
     <thead>
         <tr>
-            <td></td>
+            <td>Id</td>
             <td>Name</td>
             <td>Quantity</td>
             <td>SalePrice</td>
             <td>GoodPrice</td>
         </tr>
+    </thead>
+    <tbody>
 
         @{
             var count = 1;
         }
         @foreach (var item in Model)
         {
-            <tr>
+        
+            <tr>     
                 <td>@count</td>
                 <td>@item.Name</td>
                 <td>@item.Quantity</td>
@@ -31,6 +76,5 @@
             count++;
         }
 
-    </thead>
-
+    </tbody>
 </table>

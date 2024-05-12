@@ -1,33 +1,4 @@
-﻿//test get respons to all products
-
-//let arr = [];
-//let respons = fetch("https://localhost:7278/Product/AllProducts")
-//    .then(data => data)
-//    .then(res => arr = res)
-
-//arr = respons;
-//console.log(arr);
-
-
-
-function newLine() {
-
-
-    let arr = getAll();
-    function getAll() {
-
-        var url = "/Product/AllProduct";
-        $.get(url, null, function (data) {
-            $("#rData").data(data)
-            return data;
-        })
-
-    }
-    console.log(arr);
-    /*getAll()*/
-
-
-
+﻿function newLine() {
 
     let getTable = document.getElementById("AllInfo");
  

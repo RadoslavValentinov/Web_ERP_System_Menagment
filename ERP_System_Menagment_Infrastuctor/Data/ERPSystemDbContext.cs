@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ERP_System_Menagment_Infrastuctor.Data
 {
-    
+
     public class ERPSystemDbContext : IdentityDbContext<Users>
     {
         public ERPSystemDbContext(DbContextOptions<ERPSystemDbContext> option)
@@ -41,5 +41,5 @@ namespace ERP_System_Menagment_Infrastuctor.Data
 
     }
 
-    
+
 }

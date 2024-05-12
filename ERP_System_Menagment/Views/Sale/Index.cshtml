@@ -14,11 +14,7 @@
 <script src="/js/SaleFunction/AutoCompleteInput.js"></script>
 <script src="/js/SaleFunction/JavaScript.js"></script>
 
-<script src="/js/SaleFunction/JavaScript.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 
@@ -128,10 +124,6 @@
             border: 1px solid white;
         }
 
-
-
-   
-
 </style>
 
 
@@ -187,33 +179,14 @@
 
             <tr>
                 <td>
-                    <input id="first" type="text" />
+                    <input id="first" type="text" onclick="AllProd()" />
                 </td>
-                <td> <input type="text" /> </td>
-                <td> <input type="text" /> </td>
-                <td> <input type="text" onkeypress="newLine()" /> </td>
+                <td> <input type="text" value=""/> </td>
+                <td> <input type="text" value=""/> </td>
+                <td> <input type="text" value="" onkeypress="newLine()" /> </td>
             </tr>
 
         </table>
 
     </div>
 </div>
-@* <script type="text/javascript">
-    $(document).ready(function () {
-        $("#first").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    url:"/Product/AllProduct",
-                    type: "POST",
-                    dataType: "json",
-                    data: { prefix: request.term },
-                    success: function (data) {
-                        response($.map(data, function (item) {
-                            return console.log(item);
-                        }))
-                    }
-                })
-            },
-        });
-    });
-</script> *@

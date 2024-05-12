@@ -23,7 +23,7 @@ namespace ERP_System_Menagment_Infrastuctor.Data.Models
 
 
         [Required]
-        [StringLength (100)]
+        [StringLength(100)]
         public string AccountablePerson { get; set; } = null!;
 
     }
