@@ -1,4 +1,25 @@
-﻿function AllProd() {
+﻿<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+let arr = {} ;
+
+arr = $(function () {
+    setInterval(function () {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AllProduct", "Product")',
+            dataType: 'json',
+            success: function (result) {
+                console.log(result)
+            }
+        });
+    })
+
+
+function AllProd(arr) {
+
+
+
 
     let getBody = document.getElementsByClassName('sale');
 
@@ -13,7 +34,7 @@
     createDiv.style.height = '600px';
 
     let createTable = document.createElement('table');
-    createTable.style.border= '1px solid black';
+    createTable.style.border = '1px solid black';
 
     let createThead = document.createElement('thead');
     let createTr = document.createElement('tr');
@@ -32,28 +53,16 @@
     createTr.appendChild(createTdThree);
 
     let closeBtn = document.createElement('button');
-    closeBtn.setAttribute('class','btn')
+    closeBtn.setAttribute('class', 'btn')
     closeBtn.textContent = 'X';
-    closeBtn.addEventListener('click',removeBtn);
+    closeBtn.addEventListener('click', removeBtn);
     createTr.appendChild(closeBtn);
 
     createThead.appendChild(createTr);
     createTable.appendChild(createThead);
 
-    
+
 
     createDiv.appendChild(createTable);
     getBody[0].appendChild(createDiv);
 }
-
-//<script type="text/javascript">
-//    $(function(){
-
-//        $(".product").click(function (e) {
-//            e.preventDefault();
-//            $.post("@Url.Action("AllProducts")", { id: $(this).data("movieId") }, function (data) {
-//                alert(data);
-//            });
-//        });
-//});
-//</script>

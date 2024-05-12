@@ -1,10 +1,9 @@
 ﻿using ERP_System_Menagment_Core.ModelView.SaleModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ERP_System_Menagment.Controllers
 {
-  
+
     public class SaleController : Controller
     {
         public IActionResult Index()

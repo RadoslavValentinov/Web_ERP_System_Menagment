@@ -12,7 +12,7 @@ namespace ERP_System_Menagment.Controllers
         }
 
 
-        public IActionResult AllClients() 
+        public IActionResult AllClients()
         {
             return View();
         }
@@ -40,7 +40,7 @@ namespace ERP_System_Menagment.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditClient(EditClientsViewModel  model) 
+        public IActionResult EditClient(EditClientsViewModel model)
         {
             return View(model);
         }

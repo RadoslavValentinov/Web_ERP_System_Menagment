@@ -10,7 +10,7 @@ namespace ERP_System_Menagment
 {
     public class Program
     {
-        public static async  Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -20,8 +20,8 @@ namespace ERP_System_Menagment
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddScoped<IRepository,Repository>();
-            builder.Services.AddScoped<IProductService,ProductService>();
+            builder.Services.AddScoped<IRepository, Repository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             builder.Services.ConfigureApplicationCookie(option =>
             {

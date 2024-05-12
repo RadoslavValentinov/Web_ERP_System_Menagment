@@ -22,7 +22,7 @@ namespace ERP_System_Menagment.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateInvoice(CreateInvoiceViewModel model) 
+        public IActionResult CreateInvoice(CreateInvoiceViewModel model)
         {
             return View();
         }

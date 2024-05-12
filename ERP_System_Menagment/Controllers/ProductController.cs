@@ -1,15 +1,12 @@
-﻿using ERP_System_Menagment_Core.IServices;
+﻿using ERP_System_Menagment.Infrastructure.Data.Common;
+using ERP_System_Menagment_Core.IServices;
 using ERP_System_Menagment_Core.ModelView.ProductVievModel;
 using ERP_System_Menagment_Infrastuctor.Data.Models;
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
-using System;
-using System.Web.Mvc;
-using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 using HttpGetAttribute = System.Web.Mvc.HttpGetAttribute;
 using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
+using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
 
 namespace ERP_System_Menagment.Controllers
 {
@@ -17,10 +14,13 @@ namespace ERP_System_Menagment.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService service;
+        private readonly IRepository repo;
 
-        public ProductController(IProductService _service)
+        public ProductController(IProductService _service,
+             IRepository _repo)
         {
             service = _service;
+            repo = _repo;
         }
 
 
@@ -37,12 +37,17 @@ namespace ERP_System_Menagment.Controllers
         }
 
         //method get to data format in Json
-       
-        public  JsonResult AllProduct()
-        {
-            var convert = service.AllProducts();
 
-            return Json(convert, JsonRequestBehavior.AllowGet);
+
+        /// <summary>
+        /// Get All product list of database of json format to send data to div
+        /// </summary>
+        /// <returns>json data</returns>
+        public JsonResult AllProduct()
+        {
+            var convert = repo.All<Products>();
+
+            return Json(convert);
         }
 
 
