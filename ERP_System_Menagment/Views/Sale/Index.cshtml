@@ -12,9 +12,9 @@
 <script src="/js/SaleFunction/AllProduct.js"></script>
 <script src="/js/SaleFunction/RemoveBtn.js"></script>
 <script src="/js/SaleFunction/AutoCompleteInput.js"></script>
-<script src="/js/SaleFunction/JavaScript.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -179,10 +179,10 @@
 
             <tr>
                 <td>
-                    <input id="first" type="text" onclick="AllProd()" />
+                    <input id="first" type="text" onfocus="seeBtn()" />
                 </td>
-                <td> <input type="text" value=""/> </td>
-                <td> <input type="text" value=""/> </td>
+                <td> <input type="text" value="" /> </td>
+                <td> <input type="text" value="" /> </td>
                 <td> <input type="text" value="" onkeypress="newLine()" /> </td>
             </tr>
 
@@ -190,3 +190,14 @@
 
     </div>
 </div>
+@* 
+<script>
+    let arr = {};
+    $.ajax({
+        url: '/Product/AllProduct',
+        type: "POST",
+        success: function (data) {
+            arr = JSON.parse(data)
+            console.log(data)
+        }
+</script> *@

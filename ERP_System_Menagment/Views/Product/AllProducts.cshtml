@@ -21,10 +21,15 @@
 
         tr:nth-child(even) {
             background-color: lightgray;
-            color: whitesmoke;
+            color: black;
         }
 
-    thead tr{
+    .prod:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    thead tr {
         background-color: lightgray;
         color: black;
     }
@@ -64,8 +69,8 @@
         }
         @foreach (var item in Model)
         {
-        
-            <tr>     
+
+            <tr class="prod">
                 <td>@count</td>
                 <td>@item.Name</td>
                 <td>@item.Quantity</td>

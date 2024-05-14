@@ -44,4 +44,7 @@
 
 
     ch[0].appendChild(tr);
+
+    let remove = document.getElementById("getAll");
+    remove.setAttribute('hidden');
 }
