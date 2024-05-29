@@ -4,6 +4,8 @@ namespace ERP_System_Menagment_Core.ModelView.ProductVievModel
 {
     public class EditProductViewModel
     {
+        public int Id { get; set; }
+
         [Required]
         [StringLength(100)]
         public string Name { get; set; } = null!;

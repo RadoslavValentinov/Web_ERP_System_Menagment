@@ -1,24 +1,4 @@
-﻿<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-let arr = {} ;
-
-arr = $(function () {
-    setInterval(function () {
-        $.ajax({
-            type: "POST",
-            url: '@Url.Action("AllProduct", "Product")',
-            dataType: 'json',
-            success: function (result) {
-                console.log(result)
-            }
-        });
-    })
-
-
-function AllProd(arr) {
-
-
+﻿function AllProd() {
 
 
     let getBody = document.getElementsByClassName('sale');
@@ -54,14 +34,12 @@ function AllProd(arr) {
 
     let closeBtn = document.createElement('button');
     closeBtn.setAttribute('class', 'btn')
-    closeBtn.textContent = 'X';
     closeBtn.addEventListener('click', removeBtn);
+    closeBtn.textContent = 'X'; 
     createTr.appendChild(closeBtn);
 
     createThead.appendChild(createTr);
     createTable.appendChild(createThead);
-
-
 
     createDiv.appendChild(createTable);
     getBody[0].appendChild(createDiv);

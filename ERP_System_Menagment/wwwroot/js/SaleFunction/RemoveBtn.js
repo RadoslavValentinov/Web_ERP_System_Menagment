@@ -1,6 +1,6 @@
 ﻿function removeBtn() {
 
-    let getDivHide = document.getElementById('result');
+    let getDivHide = document.getElementById("result");
 
     getDivHide.style.visibility = 'hidden';
 

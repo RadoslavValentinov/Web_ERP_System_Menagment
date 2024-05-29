@@ -1,0 +1,49 @@
+﻿@using ERP_System_Menagment_Core.ModelView.ProductVievModel
+@model EditProductViewModel
+
+<style>
+
+    body{
+        background: rgb(4,4,246);
+        background: linear-gradient(360deg, rgba(4,4,246,0.24086131034445024) 0%, rgba(4,214,249,0.9327380610447304) 10%);
+    }
+
+    #formCreate{
+       width:450px;
+    }
+
+</style>
+
+
+
+
+
+@using (Html.BeginForm("EditProducts", "Product", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div id="formCreate">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" aria-required="true" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label">Quantity</label>
+            <input asp-for="Quantity" class="form-control" aria-required="true" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SalePrice" class="form-label">Price</label>
+            <input asp-for="SalePrice" class="form-control" aria-required="true"></input>
+            <span asp-validation-for="SalePrice" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="GoodPrice" class="form-label">Price</label>
+            <input asp-for="GoodPrice" class="form-control" aria-required="true"></input>
+            <span asp-validation-for="GoodPrice" class="text-danger"></span>
+        </div>
+       
+
+        <button type="submit" class="btn btn-primary"> Update Product </button>
+    </div>
+}
