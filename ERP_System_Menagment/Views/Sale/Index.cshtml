@@ -15,7 +15,8 @@
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 
 <style>
@@ -179,9 +180,9 @@
 
             <tr>
                 <td>
-                    <input id="first" type="text" onfocus="seeBtn()" />
+                    <input id="first" type="text" />
                 </td>
-                <td> <input type="text" value="" /> </td>
+                <td> <input type="text" runat="server" value="" /> </td>
                 <td> <input type="text" value="" /> </td>
                 <td> <input type="text" value="" onkeypress="newLine()" /> </td>
             </tr>
@@ -190,14 +191,50 @@
 
     </div>
 </div>
-@* 
-<script>
-    let arr = {};
-    $.ajax({
-        url: '/Product/AllProduct',
-        type: "POST",
-        success: function (data) {
-            arr = JSON.parse(data)
-            console.log(data)
-        }
-</script> *@
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#first").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/Product/AllProduct",
+                        type: "POST",
+                        dataType: "json",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return console.log(data )
+                            }))
+                        }
+                    })
+                },
+                messages: {
+                    noResults: "", results: ""
+                }
+            });
+        });
+
+    </script>
+}
+
+
+
+
+@*  <script>
+        $(document).ready(function () {
+            let arr = {};
+            $.ajax({
+                url: "@Url.Action("AllProduct", "Product")",
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    arr = JSON.stringify(data)
+                    console.log(JSON.stringify(data))
+                }
+            });
+
+        });
+    </script> *@
+

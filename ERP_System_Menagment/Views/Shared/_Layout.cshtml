@@ -31,7 +31,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AllProducts"><i class="fa-brands fa-product-hunt fa-xl"></i>All Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="AllClients">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="AllProducts">
                                 <i class="fa-solid fa-list-ul fa-xl"></i>
                                 Stock Check
                             </a>
@@ -63,6 +63,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

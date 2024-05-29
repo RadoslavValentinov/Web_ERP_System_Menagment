@@ -35,10 +35,14 @@
     }
 
 
-    .btn {
+    #create {
         position: absolute;
         left: 50px;
         padding: 10px;
+        
+    }
+
+    .btn{
         border: 1px solid gray;
         border-radius: 6px;
         background-color: lawngreen;
@@ -47,7 +51,7 @@
 
 </style>
 
-<a class="btn" type="submit" asp-area="" asp-controller="Product" asp-action="CreateProducts">+ Add Product</a>
+<a id="create"class="btn" type="submit" asp-area="" asp-controller="Product" asp-action="CreateProducts">+ Add Product</a>
 
 
 
@@ -60,25 +64,26 @@
             <td>Quantity</td>
             <td>SalePrice</td>
             <td>GoodPrice</td>
+            <td>Options</td>
         </tr>
     </thead>
     <tbody>
 
-        @{
-            var count = 1;
-        }
+      
         @foreach (var item in Model)
         {
 
             <tr class="prod">
-                <td>@count</td>
+                <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Quantity</td>
                 <td>@item.SalePrice</td>
                 <td>@item.GoodPrice</td>
+                <td>
+                    <a class="btn btn-dark" asp-route-id="@item.Id" asp-area="" asp-controller="Product" asp-action="EditProducts">Edit</a>
+                    <a class="btn btn-danger" asp-route-id="@item.Id" asp-area="" asp-controller="Product" asp-action="DeleteProducts">Delete</a>
+                </td>
             </tr>
-
-            count++;
         }
 
     </tbody>
