@@ -13,7 +13,7 @@ namespace ERP_System_Menagment_Infrastuctor.Migrations
 {
     [DbContext(typeof(ERPSystemDbContext))]
     [Migration("20240425181429_config")]
-    partial class config
+    partial class Config
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
