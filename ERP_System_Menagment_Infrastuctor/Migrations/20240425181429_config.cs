@@ -4,7 +4,7 @@
 
 namespace ERP_System_Menagment_Infrastuctor.Migrations
 {
-    public partial class config : Migration
+    public partial class Config : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

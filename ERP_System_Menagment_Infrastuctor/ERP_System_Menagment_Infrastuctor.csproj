@@ -23,4 +23,8 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.27" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

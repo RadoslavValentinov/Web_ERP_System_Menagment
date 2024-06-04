@@ -2,6 +2,7 @@
 using ERP_System_Menagment_Infrastuctor.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace ERP_System_Menagment_Infrastuctor.Data
 {
@@ -15,7 +16,7 @@ namespace ERP_System_Menagment_Infrastuctor.Data
 
         public DbSet<Invoice> Invoices { get; set; } = null!;
 
-        public DbSet<Products> AllProducts { get; set; } = null!;
+        public DbSet<Products> Products { get; set; } = null!;
 
         public DbSet<ClientsData> Clients { get; set; } = null!;
 
@@ -24,11 +25,14 @@ namespace ERP_System_Menagment_Infrastuctor.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Products>(b =>
-            {
-                b.HasKey(e => e.ID);
-                b.Property(e => e.ID).ValueGeneratedOnAdd();
-            });
+
+
+            //builder.HasSequence<int>("Products");
+
+            //builder.Entity<Products>()
+            //    .Property(o => o.ID)
+            //    .HasDefaultValueSql("NEXT VALUE FOR Products");
+
 
 
 

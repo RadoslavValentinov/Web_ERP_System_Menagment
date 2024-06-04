@@ -1,5 +1,5 @@
-﻿@using ERP_System_Menagment_Core.ModelView.ClientsModels
-@model IEnumerable<ClientViewModel>
+﻿@using ERP_System_Menagment_Core.ModelView.ProductVievModel;
+@model IEnumerable<ProductViewModel>
 
 
 <link rel="stylesheet" href="~/css/ClientsStyle/Clients.css" asp-append-version="true" />
@@ -10,19 +10,20 @@
 
     <table>
         <tr>
-            <th>Client Name</th>
-            <th>Register Number</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Accountable Person</th>
+            <th>Product Name</th>
+            <th>Product Quantity</th>
+            <th>Product Sell Price</th>
+            <th>Product Good Price</th>
+            <th>Product options</th>
         </tr>
 
         <tr>
-            <td>@item.FirmName</td>
-            <td>@item.RegistrNumber</td>
-            <td>@item.Address</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.AccountablePerson</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+            <td>@item.SalePrice</td>
+            <td>@item.GoodPrice</td>
+            <td><button class="btn" >Edit</button></td>
+            <td><button class="btn">Delete</button></td>
         </tr>
 
     </table>
