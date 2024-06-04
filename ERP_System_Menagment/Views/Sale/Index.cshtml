@@ -180,7 +180,11 @@
 
             <tr>
                 <td>
+<<<<<<< HEAD
+                    <input id="first" type="text" runat="server" />
+=======
                     <input id="first" type="text" />
+>>>>>>> 27a318b20d878b3fba016a17043018e56fdd201a
                 </td>
                 <td> <input type="text" runat="server" value="" /> </td>
                 <td> <input type="text" value="" /> </td>
@@ -192,6 +196,11 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+@*return object how to reprecent in page*@
+
+=======
+>>>>>>> 27a318b20d878b3fba016a17043018e56fdd201a
 @section Scripts {
     <script type="text/javascript">
         $(document).ready(function () {
@@ -204,7 +213,12 @@
                         data: { term: request.term },
                         success: function (data) {
                             response($.map(data, function (item) {
+<<<<<<< HEAD
+                                return JSON.stringify(item);;
+                                
+=======
                                 return console.log(data )
+>>>>>>> 27a318b20d878b3fba016a17043018e56fdd201a
                             }))
                         }
                     })

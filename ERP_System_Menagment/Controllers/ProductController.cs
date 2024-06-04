@@ -61,6 +61,7 @@ namespace ERP_System_Menagment.Controllers
             var convert = JsonSerializer.Serialize(repo.All<Products>().Where(x => x.Name.ToLower().StartsWith(term.ToLower())));
 
             return Json(convert, JsonRequestBehavior.AllowGet);
+
         }
 
 
