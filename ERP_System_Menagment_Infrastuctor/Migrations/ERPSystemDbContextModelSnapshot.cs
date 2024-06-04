@@ -119,7 +119,7 @@ namespace ERP_System_Menagment_Infrastuctor.Migrations
 
                     b.HasIndex("SaleId");
 
-                    b.ToTable("AllProducts");
+                    b.ToTable("Products");
 
                     b.HasData(
                         new
