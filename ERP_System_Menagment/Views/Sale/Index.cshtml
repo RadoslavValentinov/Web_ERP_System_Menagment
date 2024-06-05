@@ -11,6 +11,7 @@
 <script src="/js/SaleFunction/CreateBtn.js"></script>
 <script src="/js/SaleFunction/AllProduct.js"></script>
 <script src="/js/SaleFunction/AutoCompleteInput.js"></script>
+<script src="/js/SaleFunction/SumField.js"></script>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -124,6 +125,35 @@
             border: 1px solid white;
         }
 
+    .ui-autocomplete {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border: solid 1px #ccc;
+        background-color: #fff;
+        width: 500px;
+    }*
+
+        .ui-autocomplete li {
+            font-family: Arial, Verdana, Sans-Serif;
+            margin: 1px;
+            cursor: pointer;
+            display: block;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.428571429;
+        }
+
+        .ui-autocomplete .ui-state-focus {
+            background-color: gray;
+        }
+
+
+    .ui-helper-hidden-accessible {
+        display: none;
+    }
+
 </style>
 
 
@@ -174,16 +204,17 @@
         <h5>Daily turnover: 1200.26lv</h5>
     </aside>
     <div class="prod">
-        <button id="getAll" onclick="AllProd()" hidden>...</button>
+        @*<button id="getAll" onclick="AllProd()" hidden>...</button>*@
+        
         <table id="AllInfo">
 
             <tr>
                 <td>
                     <input id="first" type="text" runat="server" />
                 </td>
-                <td> <input type="text" runat="server" value="" /> </td>
-                <td> <input type="text" value="" /> </td>
-                <td> <input type="text" value="" onkeypress="newLine()" /> </td>
+                <td> <input id="quantity" type="text" runat="server" value="0.00" /> </td>
+                <td> <input id="price" type="text" value="0.00" onkeypress="resultSum()" /> </td>@*This set function to calculate sum of quantity and price*@
+                <td> <input id="Sum" type="text" value="0.00" onkeypress="newLine()" /> </td>
             </tr>
 
         </table>
@@ -194,6 +225,10 @@
 
 @section Scripts {
     <script type="text/javascript">
+
+        let getPrice = document.getElementById("price");
+        let curentValue;
+
         $(document).ready(function () {
             $("#first").autocomplete({
                 source: function (request, response) {
@@ -205,38 +240,19 @@
                         success: function (data) {
                             response($.map(data, function (item) {
 
-                                return JSON.stringify(item);;
-
+                                getPrice = item["salePrice"];
+                                
+                                return item["name"];
                             }))
+                            
                         }
                     })
                 },
-                messages: {
-                    noResults: "", results: ""
+                Messages: {
+                    noResults: "", results:""
                 }
             });
         });
 
     </script>
 }
-
-
-
-
-@*  <script>
-        $(document).ready(function () {
-            let arr = {};
-            $.ajax({
-                url: "@Url.Action("AllProduct", "Product")",
-                type: "GET",
-                dataType: "json",
-                contentType: "application/json",
-                success: function (data) {
-                    arr = JSON.stringify(data)
-                    console.log(JSON.stringify(data))
-                }
-            });
-
-        });
-    </script> *@
-
