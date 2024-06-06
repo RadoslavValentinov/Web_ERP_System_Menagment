@@ -32,7 +32,7 @@
         justify-content: space-between;
     }
 
-        #amount .sum {
+        #amount .Allsum {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50px;
             position: relative;
@@ -168,7 +168,7 @@
         </div>
 
 
-        <h3 class="sum">Sum:0.00</h3>
+        <h3 class="Allsum">Sum:0.00</h3>
     </div>
     <hr />
     <aside>
@@ -227,7 +227,6 @@
     <script type="text/javascript">
 
         let getPrice = document.getElementById("price");
-        let curentValue;
 
         $(document).ready(function () {
             $("#first").autocomplete({
@@ -240,8 +239,8 @@
                         success: function (data) {
                             response($.map(data, function (item) {
 
-                                getPrice = item["salePrice"];
-                                
+                                getPrice.value = item["salePrice"];
+
                                 return item["name"];
                             }))
                             
