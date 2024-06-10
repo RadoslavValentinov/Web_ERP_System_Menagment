@@ -4,7 +4,7 @@ namespace ERP_System_Menagment_Infrastuctor.Data.Models
 {
     public class Users : IdentityUser
     {
-        public string Avatar { get; set; } = null!;
+        public string? Avatar { get; set; }
 
         public string FirstName { get; set; } = null!;
 

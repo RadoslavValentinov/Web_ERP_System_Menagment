@@ -4,15 +4,13 @@
  
     let ch = getTable.children;
 
-
-
-
     let tr = document.createElement('tr');
 
     let tdFirst = document.createElement('td');
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
     inputFirst.setAttribute('id', 'first');
+    inputFirst.addEventListener('keypress', autoField);
     tdFirst.appendChild(inputFirst);
 
 

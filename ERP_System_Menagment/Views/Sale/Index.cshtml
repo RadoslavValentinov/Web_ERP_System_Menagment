@@ -8,10 +8,10 @@
 
 
 <script src="/js/SaleFunction/NewLine.js"></script>
-<script src="/js/SaleFunction/CreateBtn.js"></script>
 <script src="/js/SaleFunction/AllProduct.js"></script>
-<script src="/js/SaleFunction/AutoCompleteInput.js"></script>
 <script src="/js/SaleFunction/SumField.js"></script>
+<script src="/js/SaleFunction/AutocompleteAjax.js"></script>
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -168,7 +168,7 @@
         </div>
 
 
-        <h3 class="Allsum">Sum:0.00</h3>
+        <h3 class="Allsum">Sum:0.00lv.</h3>
     </div>
     <hr />
     <aside>
@@ -210,7 +210,7 @@
 
             <tr>
                 <td>
-                    <input id="first" type="text" runat="server" />
+                    <input id="first" onkeypress="autoField()" type="text" runat="server" />
                 </td>
                 <td> <input id="quantity" type="text" runat="server" value="0.00" /> </td>
                 <td> <input id="price" type="text" value="0.00" onkeypress="resultSum()" /> </td>@*This set function to calculate sum of quantity and price*@
@@ -223,13 +223,13 @@
 </div>
 
 
-@section Scripts {
+@* @section Scripts {
     <script type="text/javascript">
 
         let getPrice = document.getElementById("price");
 
         $(document).ready(function () {
-            $("#first").autocomplete({
+            $("#first").last().autocomplete({
                 source: function (request, response) {
                     $.ajax({
                         url: "/Product/AllProduct",
@@ -254,4 +254,4 @@
         });
 
     </script>
-}
+} *@

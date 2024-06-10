@@ -8,14 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\SaleFunction\AutocompleteAjax.js" />
     <Content Remove="wwwroot\js\SaleFunction\SumField.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\SaleFunction\AutocompleteAjax.js" />
     <_ContentIncludedByDefault Remove="wwwroot\js\SaleFunction\SumField.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\SaleFunction\AutocompleteAjax.js" />
     <None Include="wwwroot\js\SaleFunction\SumField.js" />
   </ItemGroup>
 
