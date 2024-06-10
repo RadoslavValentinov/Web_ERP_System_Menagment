@@ -1,4 +1,5 @@
 ﻿
+
 function resultSum() {
 
     let getQuantity = document.getElementById("quantity");
@@ -8,6 +9,6 @@ function resultSum() {
 
 
     getSum.value = Number(getQuantity.value * getPrice.value);
-    Sum.textContent = $`Sum: ${getSum.value}`;
+    Sum[0].textContent = 'Sum:' + Number(getSum.value).toFixed(2)+'lv.';
 
 }
