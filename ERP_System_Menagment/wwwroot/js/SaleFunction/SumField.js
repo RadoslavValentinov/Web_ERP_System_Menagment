@@ -1,6 +1,4 @@
-﻿
-
-function resultSum() {
+﻿function resultSum() {
 
     let getQuantity = document.getElementById("quantity");
     let getPrice = document.getElementById("price");
