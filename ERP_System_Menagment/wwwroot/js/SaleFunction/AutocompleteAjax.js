@@ -1,9 +1,13 @@
 ﻿
+// get all input field to collection and use only last this is result may be
+
+
+
 function autoField() {
 
     let getPrice = document.getElementById("price");
 
-    $(document).ready(function () {
+    $(function () {
         $("#first").last().autocomplete({
             source: function (request, response) {
                 $.ajax({

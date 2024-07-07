@@ -10,7 +10,7 @@
     let inputFirst = document.createElement('input');
     inputFirst.type = 'text';
     inputFirst.setAttribute('id', 'first');
-    inputFirst.addEventListener('keypress', autoField);
+    inputFirst.addEventListener('keypress', autoField());
     tdFirst.appendChild(inputFirst);
 
 

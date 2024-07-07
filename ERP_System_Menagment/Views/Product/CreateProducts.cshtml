@@ -10,21 +10,28 @@
 
 
     #formCreate {
-        width:450px;
+        position:relative;
+        left:300px;
+        top:50px;
+        width:650px;
+        background-color:whitesmoke;
+        border: 2PX solid gray;
+        padding:10px 25px;
     }
 
-    .discription{
-        width:350px;
-        height:200px;
-        position:absolute;
-        left:900px;
-        top:100px;
-        border: 1px solid black;
-        border-radius:4px;
-        padding:10px;
-        font-family:Arial, Helvetica, sans-serif;
-        font-style:italic;
+    #create{
+
+        position:relative;
+        left:130px;
     }
+
+    #cencel{
+
+        position:relative;
+        left:220px;
+        padding:6px 25px;
+    }
+
 
 </style>
 
@@ -56,14 +63,8 @@
             <span asp-validation-for="GoodPrice" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary"> Create Product</button>
+        <button id="create" type="submit" class="btn btn-primary"> Create Product</button>
+
+        <button id="cencel" asp-area="" asp-controller="Product" asp-action="AllProducts" class="btn btn-primary"> Cancel </button>
     </div>
 }
-<div class="discription">
-
-    <h4>To add a product</h4>
-    <p>
-         You must enter valid data 
-        - product name, quantity, selling price, delivery price.
-    </p>
-</div>

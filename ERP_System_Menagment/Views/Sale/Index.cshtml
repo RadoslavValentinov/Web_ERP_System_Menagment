@@ -74,7 +74,7 @@
     }
 
     .prod {
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     aside {
@@ -204,16 +204,15 @@
         <h5>Daily turnover: 1200.26lv</h5>
     </aside>
     <div class="prod">
-        @*<button id="getAll" onclick="AllProd()" hidden>...</button>*@
-        
+   
         <table id="AllInfo">
 
             <tr>
                 <td>
-                    <input id="first" onkeypress="autoField()" type="text" runat="server" />
+                    <input id="first" onkeypress="autoField()" type="text"/>
                 </td>
                 <td> <input id="quantity" type="text" runat="server" value="0.00" /> </td>
-                <td> <input id="price" type="text" value="0.00" onkeypress="resultSum()" /> </td>@*This set function to calculate sum of quantity and price*@
+                <td> <input id="price" type="text" value="0.00" onkeypress="resultSum()" /> </td>
                 <td> <input id="Sum" type="text" value="0.00" onkeypress="newLine()" /> </td>
             </tr>
 
