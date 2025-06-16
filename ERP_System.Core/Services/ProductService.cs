@@ -3,7 +3,6 @@ using ERP_System_Menagment_Core.IServices;
 using ERP_System_Menagment_Core.ModelView.ProductVievModel;
 using ERP_System_Menagment_Infrastuctor.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Encodings.Web;
 
 namespace ERP_System_Menagment_Core.Services
 {
