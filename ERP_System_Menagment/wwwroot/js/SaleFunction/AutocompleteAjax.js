@@ -5,10 +5,10 @@
 
 function autoField() {
 
-    let getPrice = document.getElementById("price");
+    let getPrice = document.getElementsByClassName("product");
 
     $(function () {
-        $("#first").last().autocomplete({
+        $(".product").on.autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Product/AllProduct",
