@@ -14,6 +14,7 @@
 
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -133,22 +134,24 @@
         border: solid 1px #ccc;
         background-color: #fff;
         width: 500px;
-    }*
+    }
 
-        .ui-autocomplete li {
-            font-family: Arial, Verdana, Sans-Serif;
-            margin: 1px;
-            cursor: pointer;
-            display: block;
-            height: 34px;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.428571429;
-        }
+    *
 
-        .ui-autocomplete .ui-state-focus {
-            background-color: gray;
-        }
+    .ui-autocomplete li {
+        font-family: Arial, Verdana, Sans-Serif;
+        margin: 1px;
+        cursor: pointer;
+        display: block;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.428571429;
+    }
+
+    .ui-autocomplete .ui-state-focus {
+        background-color: gray;
+    }
 
 
     .ui-helper-hidden-accessible {
@@ -205,53 +208,63 @@
         <h5>Daily turnover: 1200.26lv</h5>
     </aside>
     <div class="prod">
-   
-        <table id="AllInfo">
 
-            <tr>
-                <td>
-                    <input id="first" onkeypress="autoField()" type="text"/>
-                </td>
-                <td> <input id="quantity" type="text" runat="server" value="0.00" /> </td>
-                <td> <input id="price" type="text" value="0.00" onkeypress="resultSum()" /> </td>
-                <td> <input id="Sum" type="text" value="0.00" onkeypress="newLine()" /> </td>
-            </tr>
-
+      
+        <table id="productsTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+           
+            <tbody id="productBody">
+                
+                <tr>
+                    <td><input type="text" class="product" onkeypress="autoField()"></td>
+                    <td><input type="number" class="quantity"></td>
+                    <td><input type="number" class="price" onkeypress="calculateTotal()"></td>
+                    <td><input type="text" class="total" onkeypress="addNewRow()"></td>
+                </tr>
+            </tbody>
         </table>
+
+        
 
     </div>
 </div>
 
 
-@* @section Scripts {
+@section Scripts {
     <script type="text/javascript">
-
-        let getPrice = document.getElementById("price");
-
-        $(document).ready(function () {
-            $("#first").last().autocomplete({
-                source: function (request, response) {
-                    $.ajax({
-                        url: "/Product/AllProduct",
-                        type: "POST",
-                        dataType: "json",
-                        data: { term: request.term },
-                        success: function (data) {
-                            response($.map(data, function (item) {
-
-                                getPrice.value = item["salePrice"];
-
-                                return item["name"];
-                            }))
-                            
-                        }
-                    })
-                },
-                Messages: {
-                    noResults: "", results:""
-                }
+        $(function () {
+           
+            $('#productBody').on('change', 'input', function () {
+                calculateTotal();
             });
         });
-
+        function addNewRow() {
+            $('#productBody').append(`
+                <tr>
+                    <td><input type="text" class="product" onkeypress="autoField()"></td>
+                    <td><input type="number" class="quantity" value="0" ></td>
+                    <td><input type="number" class="price" value="0.00" onkeypress="calculateTotal()"></td>
+                    <td><input type="text" class="total" value="0.00"  onkeypress="addNewRow()"></td>
+                </tr>
+            `);
+        }
+        function calculateTotal() {
+            let total = 0;
+            $('#productBody tr').each(function () {
+                const quantity = parseFloat($(this).find('.quantity').val()) || 0;
+                const price = parseFloat($(this).find('.price').val()) || 0;
+                const rowTotal = quantity * price;
+                $(this).find('.total').val(rowTotal.toFixed(2));
+                total += rowTotal;
+            });
+            $('.Allsum').text(`Sum: ${total.toFixed(2)}lv.`);
+        }
     </script>
-} *@
+}
