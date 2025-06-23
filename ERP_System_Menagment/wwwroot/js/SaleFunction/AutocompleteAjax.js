@@ -1,14 +1,10 @@
 ﻿
-// get all input field to collection and use only last this is result may be
-
-
-
 function autoField() {
 
-    let getPrice = document.getElementsByClassName("product");
+    let getPrice = document.getElementsByClassName('product');
 
     $(function () {
-        $(".product").on.autocomplete({
+        $('input.product').attr('class').on.autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Product/AllProduct",
